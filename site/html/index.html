@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aero-Club</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  .full-screen-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .navbar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Keeps the navbar on top */
+  }
+
+  .transparent-nav {
+    background: rgba(255, 255, 255, 0.085); /* Slightly transparent white background */
+  }
+
+  .full-screen-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+
+<div class="full-screen-container">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-overlay transparent-nav">
+    <img src="../images/Logo_ACF2L_blanc_site.png" alt="logo" height="75px">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Nos Activités</a>
+        <a class="nav-item nav-link" href="#">Catégories d'ULM</a>
+        <a class="nav-item nav-link" href="#">Lieu</a>
+        <a class="nav-item nav-link" href="#">Galerie</a>
+        <a class="nav-item nav-link" href="#">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <img src="../images/navbar_blanc.jpg" alt="Clouds" class="full-screen-image">
+</div>
+
+</body>
+</html>
