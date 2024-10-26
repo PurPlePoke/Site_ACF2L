@@ -30,6 +30,31 @@
     width: 100%;
     object-fit: cover;
   }
+
+  .blue-background {
+    background-color: #9EB9D0; /* Bleu Bootstrap */
+    padding: 20px; /* Espacement intérieur pour la section */
+  }
+
+  .card {
+    background-color: rgba(255, 255, 255, 0.8); /* Cartes légèrement transparentes */
+  }
+
+  .card-header, .card-footer {
+    background-color: rgba(0, 0, 0, 0.03); /* En-tête et pied de page des cartes */
+  }
+
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+        }
+
+  .carousel-item img {
+    height: 600px; /* Fixe la hauteur des images */
+    object-fit: cover; /* Garantit que l'image couvre la zone sans être déformée */
+    width: 100%; /* Maintient la largeur responsive */
+    }
 </style>
 </head>
 <body class="overflow-x-hidden">
@@ -42,7 +67,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="#">Accueil</a>
         <a class="nav-item nav-link" href="#">Nos Activités</a>
         <a class="nav-item nav-link" href="#">Catégories d'ULM</a>
         <a class="nav-item nav-link" href="#">Lieu</a>
@@ -55,21 +80,165 @@
 </div>
 
 <div class="row mt-5">
-  <div class="col-6"><img src="../images/avion.jpeg" alt="avion" width="100%" class="rounded-end-5"></div>
-  <div class="col-6">
-    <h2 class="display-3 text-center">Nos activités</h2><br />
-    <h4 class="lh-lg">L’aéro-club assure la formation de pilotes, d’instructeurs, et propose également des baptêmes de l’air.</h4>
-    <h4 class="lh-lg">Pour cela, le club assure les prestations complémentaires suivantes :</h4><br />
-    <h4>
+  <div class="col-5"><img src="../images/avion_jour_.png" alt="avion" width="100%" class="rounded-end-5"></div>
+  <div class="col-1"></div>
+  <div class="col-6 flex-column d-flex justify-content-center">
+    <h2 class="display-3 text-center mb-5 fw-bold">Nos activités</h2><br />
+    <h4 class="lh-lg my-5">L’aéro-club assure la formation de pilotes, d’instructeurs, et propose également des baptêmes de l’air.</h4>
+    <h4 class="lh-lg my-5">Pour cela, le club assure les prestations complémentaires suivantes :</h4><br />
+    <h4 class="ps-5">
       <ul class="lh-lg">
-        <li class="marker"><span class="fw-bold">Maintenance</span> des ULM moteur, structure…</li>
-        <li class="marker"><span class="fw-bold">Montage</span> des ULM et de tout instrument denavigation :Compas, radio, transpondeur…</li>
-        <li class="marker">Un service de <span class="fw-bold">restauration rapide.</span></li>
-        <li class="marker">Un <span class="fw-bold">hébergement</span> en proposant trois studios et six chambres pour les élèves stagiaires.</li>
-        <li class="marker"><span class="fw-bold">Location d’emplacement</span> ULM dans des hangars pour les particuliers.</li>
+        <li class="marker my-5"><span class="fw-bold">Maintenance</span> des ULM moteur, structure…</li>
+        <li class="marker my-5"><span class="fw-bold">Montage</span> des ULM et de tout instrument denavigation :Compas, radio, transpondeur…</li>
+        <li class="marker my-5">Un service de <span class="fw-bold">restauration rapide.</span></li>
+        <li class="marker my-5">Un <span class="fw-bold">hébergement</span> en proposant trois studios et six chambres pour les élèves stagiaires.</li>
+        <li class="marker my-5"><span class="fw-bold">Location d’emplacement</span> ULM dans des hangars pour les particuliers.</li>
       </ul>
     </h4>
   </div>
 </div>
+
+<div class="container-xl pt-5 my-5">
+  <div class="blue-background rounded-top-5 rounded-end-5">
+      <div class="text-center mb-4">
+          <h1>Catégories d'ULM</h1>
+          <p>Il existe 6 types d'ULM : Le paramoteur – Le pendulaire – Le multiaxes – L'autogire ultraléger – L'aérostat ultraléger – L'hélicoptère ultraléger</p>
+          <p>L'association possède 3 types d'appareil :</p>
+      </div>
+      <div class="row">
+          <div class="col-sm-4">
+              <div class="card">
+                  <img src="../images/paramoteur_jour.png" class="card-img-top" alt="Paramoteur" height="130px" width="auto">
+                  <div class="card-body">
+                      <h5 class="card-title">Classe 1 : le paramoteur</h5>
+                      <p class="card-text">Aéronef sustenté par une voilure souple, de type parachute.</p>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Monoplace : 82 CV</li>
+                          <li class="list-group-item">Biplace : 102 CV</li>
+                          <li class="list-group-item">Vitesse de vol min : 65 km/h</li>
+                          <li class="list-group-item">Monoplace : 300kg</li>
+                          <li class="list-group-item">Biplace : 450 kg</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-4">
+              <div class="card">
+                  <img src="../images/multiaxe_jour.png" class="card-img-top" alt="Multiaxe">
+                  <div class="card-body">
+                      <h5 class="card-title">Classe 3 : le multiaxe</h5>
+                      <p class="card-text">Aéronef sustenté par une voilure fixe.</p>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Monoplace : 88 CV</li>
+                          <li class="list-group-item">Biplace : 109 CV</li>
+                          <li class="list-group-item">Décollage : <70 km/h</li>
+                          <li class="list-group-item">Monoplace : 330kg</li>
+                          <li class="list-group-item">Biplace : 500 kg</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-4">
+              <div class="card">
+                  <img src="../images/autogire_jour.png" class="card-img-top" alt="Autogire" height="130px" width="auto">
+                  <div class="card-body">
+                      <h5 class="card-title">Classe 4 : l'autogire</h5>
+                      <p class="card-text">Aéronef sustenté par une voilure tournante.</p>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Monoplace : 116 CV</li>
+                          <li class="list-group-item">Biplace : 143 CV</li>
+                          <li class="list-group-item">Décollage : <70 km/h</li>
+                          <li class="list-group-item">Monoplace : 330kg</li>
+                          <li class="list-group-item">Biplace : 500 kg</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<h2 class="text-center fw-bold display-3">Sur le site</h2>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-4">
+    <h4>Sur le site nous disposons de :</h4>
+    <h4 class="ps-4">
+      <ul>
+        <li class="marker my-5">Une surface totale de 45 hectares dégagés.</li>
+        <li class="marker my-5">Deux pistes en X de 800 et 450 mètres.</li>
+        <li class="marker my-5">Un hydrosurface de 8 hectares.</li>
+        <li class="marker my-5">Trois hangars avec surface couverte de 4300 m².</li>
+        <li class="marker my-5">Des locaux administratifs informatisés.</li>
+        <li class="marker my-5">Une salle de cours multimédia avec simulateur de vol.</li>
+        <li class="marker my-5">Un atelier d'entretien et de réparation.</li>
+        <li class="marker my-5">Des capacités d'accueil et de restauration sur place.</li>
+        <li class="marker my-5">Une connexion WIFI gratuit sur toute la base.</li>
+      </ul>
+    </h4>
+  </div>
+  <div class="col-6">
+    <img src="../images/map.png" alt="map" class="rounded-3">
+  </div>
+</div>
+
+<h2 class="text-center fw-bold display-3">Galerie Photo</h2>
+<div class="row">
+  <div class="col-2"></div>
+  <div id="lecarousel" class="carousel slide col-8 mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../images/autogire.jpg" class="d-block w-100" alt="autogire">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/autogire_jour.jpg" class="d-block w-100" alt="autogire_jour">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/autogire_jour.png" class="d-block w-100" alt="autogire_jour2">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/avion.jpg" class="d-block w-100" alt="avion">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/avion_jour.jpg" class="d-block w-100" alt="avion_jour">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/multiaxe.png" class="d-block w-100" alt="multiaxe">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/paramoteur.jpg" class="d-block w-100" alt="paramoteur">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/paramoteur_.jpg" class="d-block w-100" alt="paramoteur2">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#lecarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#lecarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-5">
+    <h2 class="fw-bold display-3 text-center">Information</h2>
+    <h4 class="py-5">acf2l@gmail.com</h4>
+    <h4 class="py-5">+33 01 60 56 60 60</h4>
+    <h4 class="py-5">62, Avenue de la République, 70200 Lure</h4>
+  </div>
+  <div class="col-5">
+    <form class="blue-background">
+
+    </form>
+  </div>
+  <div class="col-1"></div>
+</div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
