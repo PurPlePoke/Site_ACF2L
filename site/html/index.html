@@ -6,6 +6,7 @@
 <title>Aero-Club</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <style>
+  /* Mode clair */
   .section {
     padding-top: 85px; /* Ajuste selon la hauteur de ta navbar */
     margin-top: -85px; /* Négatif pour compenser le padding et aligner le contenu juste sous la navbar */
@@ -20,9 +21,17 @@
     background: rgba(255, 255, 255, 0.432); /* Slightly transparent white background */
   }
 
+  .dark-mode .transparent-nav {
+    background: rgba(0, 0, 0, 0.432); /* Slightly transparent white background */
+  }
+
   .blue-background {
     background-color: #9EB9D0; /* Bleu Bootstrap */
     padding: 20px; /* Espacement intérieur pour la section */
+  }
+
+  .dark-mode .blue-background {
+    background-color: #4C2F11; /* Changement de couleur en mode sombre */
   }
 
   .card {
@@ -75,18 +84,39 @@
     max-width: 60%; /* Largeur maximale de l'image pour ne pas remplir tout le bouton */
     height: auto; /* Hauteur auto pour maintenir le ratio de l'image */
   }
+
+  /* Mode sombre */
+.dark-mode {
+  background-color: #000D18; /* Fond sombre */
+  color: #ffffff; /* Texte blanc */
+}
+
+.dark-mode .card {
+  background-color: #000D18; /* Fond plus sombre pour les éléments spécifiques */
+  color: #ffffff;
+}
+
+.dark-mode .card .list-group-item {
+  background-color: #001529; /* Fond plus sombre pour les éléments spécifiques */
+  color: #ffffff;
+}
+
+.dark-mode .navbar-nav .nav-link {
+  color: #ffffff;
+  text-shadow: none; /* Retire l'ombre s'il y en avait une pour le mode clair */
+}
 </style>
 </head>
 
 <body class="overflow-x-hidden">
 <!--Acceuil-->
-<img src="../images/navbar_blanc.jpg" alt="fond blanc" class="img-fluid section" id="acceuil">
+<img src="../images/navbar_clair.jpg" alt="fond blanc" class="img-fluid section toggle-same-type" id="acceuil">
 
 <!--Début navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark transparent-nav fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="../images/Logo_ACF2L_site.png" alt="logo" height="75">
+      <img src="../images/Logo_ACF2L_sombre_site.png" alt="logo" class="toggle-same-type" height="75">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -99,6 +129,7 @@
         <h4><a class="nav-item nav-link" href="#lieu">Lieu</a></h4>
         <h4><a class="nav-item nav-link" href="#galerie">Galerie</a></h4>
         <h4><a class="nav-item nav-link" href="#contact">Contact</a></h4>
+        <button id="toggleDarkMode" class="btn btn-dark">Mode Sombre</button>
       </div>
     </div>
   </div>
@@ -108,7 +139,7 @@
 <!--Début activités-->
 <div class="row mt-5 section" id="activites">
   <div class="col-5">
-    <img src="../images/avion_jour_.png" alt="avion" width="100%" class="rounded-end-5">
+    <img src="../images/avion_clair.png" alt="avion" width="100%" class="rounded-end-5 toggle-png-jpg" >
   </div>
   <div class="col-md-1 d-none d-md-block"></div>
   <div class="col-6 flex-column d-flex justify-content-center">
@@ -139,7 +170,7 @@
       <div class="row">
           <div class="col-sm-4">
               <div class="card">
-                  <img src="../images/paramoteur_jour.png" class="card-img-top" alt="Paramoteur" height="130px" width="auto">
+                  <img src="../images/paramoteur_clair.png" class="card-img-top toggle-png-jpg" alt="Paramoteur" height="130px" width="auto">
                   <div class="card-body">
                       <h5 class="card-title">Classe 1 : le paramoteur</h5>
                       <p class="card-text">Aéronef sustenté par une voilure souple, de type parachute.</p>
@@ -155,7 +186,7 @@
           </div>
           <div class="col-sm-4">
               <div class="card">
-                  <img src="../images/multiaxe_jour.png" class="card-img-top" alt="Multiaxe">
+                  <img src="../images/multiaxe_clair.png" class="card-img-top toggle-same-type" alt="Multiaxe">
                   <div class="card-body">
                       <h5 class="card-title">Classe 3 : le multiaxe</h5>
                       <p class="card-text">Aéronef sustenté par une voilure fixe.</p>
@@ -171,7 +202,7 @@
           </div>
           <div class="col-sm-4">
               <div class="card">
-                  <img src="../images/autogire_jour.png" class="card-img-top" alt="Autogire" height="130px" width="auto">
+                  <img src="../images/autogire_clair.png" class="card-img-top toggle-png-jpg" alt="Autogire" height="130px" width="auto">
                   <div class="card-body">
                       <h5 class="card-title">Classe 4 : l'autogire</h5>
                       <p class="card-text">Aéronef sustenté par une voilure tournante.</p>
@@ -223,28 +254,28 @@
   <div id="lecarousel" class="carousel slide col-8 mb-5" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../images/autogire.jpg" class="d-block w-100" alt="autogire">
+        <img src="../images/autogire_sombre.jpg" class="d-block w-100 no-toggle" alt="autogire">
       </div>
       <div class="carousel-item">
-        <img src="../images/autogire_jour.jpg" class="d-block w-100" alt="autogire_jour">
+        <img src="../images/autogire_clair.jpg" class="d-block w-100 no-toggle" alt="autogire_jour">
       </div>
       <div class="carousel-item">
-        <img src="../images/autogire_jour.png" class="d-block w-100" alt="autogire_jour2">
+        <img src="../images/autogire_clair.png" class="d-block w-100 no-toggle" alt="autogire_jour2">
       </div>
       <div class="carousel-item">
-        <img src="../images/avion.jpg" class="d-block w-100" alt="avion">
+        <img src="../images/avion_sombre.jpg" class="d-block w-100 no-toggle" alt="avion">
       </div>
       <div class="carousel-item">
-        <img src="../images/avion_jour.jpg" class="d-block w-100" alt="avion_jour">
+        <img src="../images/avion_clair.jpg" class="d-block w-100 no-toggle" alt="avion_jour">
       </div>
       <div class="carousel-item">
-        <img src="../images/multiaxe.png" class="d-block w-100" alt="multiaxe">
+        <img src="../images/multiaxe_sombre.png" class="d-block w-100 no-toggle" alt="multiaxe">
       </div>
       <div class="carousel-item">
-        <img src="../images/paramoteur.jpg" class="d-block w-100" alt="paramoteur">
+        <img src="../images/paramoteur_sombre.jpg" class="d-block w-100 no-toggle" alt="paramoteur">
       </div>
       <div class="carousel-item">
-        <img src="../images/paramoteur_.jpg" class="d-block w-100" alt="paramoteur2">
+        <img src="../images/paramoteur_.jpg" class="d-block w-100 no-toggle" alt="paramoteur2">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#lecarousel" data-bs-slide="prev">
@@ -307,7 +338,7 @@
 <!--Début Footer-->
 <footer>
   <div class="text-center">
-    <img src="../images/Logo_ACF2L_site.png" alt="logo" class="mb-2" width="150px" height="auto">
+    <img src="../images/Logo_ACF2L_sombre_site.png" alt="logo" class="mb-2 toggle-same-type" width="150px" height="auto">
     <p class="fw-bold">Aéro-Club de Froidey-lès-Lure</p>
     <p class="mb-4">Copyright © Adrien Prevost. All rights reserved. Design By Killian Lawson</p>
   </div>
@@ -315,4 +346,39 @@
 <!--Fin Footer-->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+document.getElementById('toggleDarkMode').addEventListener('click', function() {
+    const isDarkMode = document.body.classList.toggle('dark-mode'); // Bascule la classe sur <body>
+
+    // Change le texte du bouton selon le mode
+    this.textContent = isDarkMode ? 'Mode Clair' : 'Mode Sombre';
+
+    // Gérer les images .png qui doivent devenir .jpg et vice-versa
+    document.querySelectorAll('img.toggle-png-jpg').forEach(img => {
+        if (isDarkMode) {
+            img.src = img.src.includes('.png') ? img.src.replace('_clair.png', '_sombre.jpg') : img.src.replace('_sombre.jpg', '_clair.png');
+        } else {
+            img.src = img.src.includes('.jpg') ? img.src.replace('_sombre.jpg', '_clair.png') : img.src.replace('_clair.png', '_sombre.jpg');
+        }
+    });
+
+    // Gérer les images .jpg qui doivent devenir .png et vice-versa
+    document.querySelectorAll('img.toggle-jpg-png').forEach(img => {
+        if (isDarkMode) {
+            img.src = img.src.includes('.jpg') ? img.src.replace('_clair.jpg', '_sombre.png') : img.src.replace('_sombre.png', '_clair.jpg');
+        } else {
+            img.src = img.src.includes('.png') ? img.src.replace('_sombre.png', '_clair.jpg') : img.src.replace('_clair.jpg', '_sombre.png');
+        }
+    });
+
+    // Gérer les images qui changent uniquement le suffixe clair à sombre et inversement
+    document.querySelectorAll('img.toggle-same-type').forEach(img => {
+        if (isDarkMode) {
+            img.src = img.src.includes('_clair') ? img.src.replace('_clair', '_sombre') : img.src.replace('_sombre', '_clair');
+        } else {
+            img.src = img.src.includes('_sombre') ? img.src.replace('_sombre', '_clair') : img.src.replace('_clair', '_sombre');
+        }
+    });
+});
+</script>
 </html>
