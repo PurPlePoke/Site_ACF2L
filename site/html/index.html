@@ -5,31 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aero-Club</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<link href="../css/font-awesome.min.css" rel="stylesheet" media="screen">
 <style>
-  .full-screen-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+  .section {
+    padding-top: 85px; /* Ajuste selon la hauteur de ta navbar */
+    margin-top: -85px; /* Négatif pour compenser le padding et aligner le contenu juste sous la navbar */
   }
 
-  .navbar-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* Keeps the navbar on top */
+  .navbar-nav .nav-link {
+    color: #ffffff !important; /* Assure que le texte est blanc */
+    text-shadow: 1px 1px 2px black; /* Ajoute un contour noir pour améliorer la lisibilité */
   }
 
   .transparent-nav {
-    background: rgba(255, 255, 255, 0.085); /* Slightly transparent white background */
-  }
-
-  .full-screen-image {
-    height: 100vh;
-    width: 100%;
-    object-fit: cover;
+    background: rgba(255, 255, 255, 0.432); /* Slightly transparent white background */
   }
 
   .blue-background {
@@ -57,51 +45,71 @@
     width: 100%; /* Maintient la largeur responsive */
     }
 
-.contact-social-link a{
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	background: #1976d2;
-	color: #fff;
-	font-size: 18px;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	box-shadow: 0 0 0 6px rgba(25,118,209,0.5);
-	margin: 6px 30px 6px 0;
-	transition: all 0.3s;
-}
+  .contact-social-link {
+    display: flex; /* Utilise Flexbox pour la disposition */
+    justify-content: center; /* Centre les boutons horizontalement */
+    align-items: center; /* Alignement vertical au centre */
+  }
 
-.contact-social-link a:hover{
-	background: #ff5722;
-	box-shadow: 0 0 0 6px rgba(255,87,34,0.5);
-}
+  .contact-social-link a{
+    display: inline-block;
+    width: 40px; /* Largeur du bouton */
+    height: 40px; /* Hauteur du bouton */
+    background: #1976d2; /* Couleur de fond initiale */
+    border-radius: 50%; /* Rend le bouton rond */
+    margin: 6px 30px 6px 0; /* Espacement autour des boutons */
+    overflow: hidden; /* Empêche les images de déborder */
+    box-shadow: 0 0 0 6px rgba(25, 118, 209, 0.5); /* Ombre portée */
+    transition: all 0.3s; /* Transition pour les effets de survol */
+    align-items: center; /* Centre les éléments verticalement (nécessaire si tu utilises Flexbox) */
+    justify-content: center; /* Centre les éléments horizontalement (nécessaire si tu utilises Flexbox) */
+    display: flex; /* Utilise Flexbox pour centrer l'image dans le bouton */
+  }
+
+  .contact-social-link a:hover{
+  	background: #ff5722;
+  	box-shadow: 0 0 0 6px rgba(255,87,34,0.5);
+  }
+
+  .contact-social-link img {
+    max-width: 60%; /* Largeur maximale de l'image pour ne pas remplir tout le bouton */
+    height: auto; /* Hauteur auto pour maintenir le ratio de l'image */
+  }
 </style>
 </head>
-<body class="overflow-x-hidden">
 
-<div class="full-screen-container">
-  <nav class="navbar navbar-expand-lg navbar-light navbar-overlay transparent-nav">
-    <img src="../images/Logo_ACF2L_blanc_site.png" alt="logo" height="75px">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<body class="overflow-x-hidden">
+<!--Acceuil-->
+<img src="../images/navbar_blanc.jpg" alt="fond blanc" class="img-fluid section" id="acceuil">
+
+<!--Début navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark transparent-nav fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="../images/Logo_ACF2L_site.png" alt="logo" height="75">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Accueil</a>
-        <a class="nav-item nav-link" href="#">Nos Activités</a>
-        <a class="nav-item nav-link" href="#">Catégories d'ULM</a>
-        <a class="nav-item nav-link" href="#">Lieu</a>
-        <a class="nav-item nav-link" href="#">Galerie</a>
-        <a class="nav-item nav-link" href="#">Contact</a>
+        <h4><a class="nav-item nav-link active" href="#acceuil">Accueil</a></h4>
+        <h4><a class="nav-item nav-link" href="#activites">Nos Activités</a></h4>
+        <h4><a class="nav-item nav-link" href="#ulm">Catégories d'ULM</a></h4>
+        <h4><a class="nav-item nav-link" href="#lieu">Lieu</a></h4>
+        <h4><a class="nav-item nav-link" href="#galerie">Galerie</a></h4>
+        <h4><a class="nav-item nav-link" href="#contact">Contact</a></h4>
       </div>
     </div>
-  </nav>
-  <img src="../images/navbar_blanc.jpg" alt="Clouds" class="full-screen-image">
-</div>
+  </div>
+</nav>
+<!--Fin navbar-->
 
-<div class="row mt-5">
-  <div class="col-5"><img src="../images/avion_jour_.png" alt="avion" width="100%" class="rounded-end-5"></div>
+<!--Début activités-->
+<div class="row mt-5 section" id="activites">
+  <div class="col-5">
+    <img src="../images/avion_jour_.png" alt="avion" width="100%" class="rounded-end-5">
+  </div>
   <div class="col-md-1 d-none d-md-block"></div>
   <div class="col-6 flex-column d-flex justify-content-center">
     <h2 class="display-3 text-center mb-5 fw-bold">Nos activités</h2><br />
@@ -118,8 +126,10 @@
     </h4>
   </div>
 </div>
+<!--Fin activités-->
 
-<div class="container-xl pt-5 my-5">
+<!--Début catégories D'ULM-->
+<div class="container-xl pt-5 my-5 section" id="ulm">
   <div class="blue-background rounded-top-5 rounded-end-5">
       <div class="text-center mb-4">
           <h1>Catégories d'ULM</h1>
@@ -178,8 +188,10 @@
       </div>
   </div>
 </div>
+<!--Fin Catégories d'ULM-->
 
-<h2 class="text-center fw-bold display-3">Sur le site</h2>
+<!--Début Lieu-->
+<h2 class="text-center fw-bold display-3 section" id="lieu">Sur le site</h2>
 <div class="row mb-5">
   <div class="col-md-1 d-none d-md-block"></div>
   <div class="col-4 h-100 d-flex flex-column justify-content-between">
@@ -202,8 +214,10 @@
     <img src="../images/map.png" alt="map" class="rounded-3 img-fluid align-self-stretch">
   </div>
 </div>
+<!--Fin Lieu-->
 
-<h2 class="text-center fw-bold display-3">Galerie Photo</h2>
+<!--Début Galerie Photo-->
+<h2 class="text-center fw-bold display-3 section" id="galerie">Galerie Photo</h2>
 <div class="row">
   <div class="col-md-2 d-none d-md-block"></div>
   <div id="lecarousel" class="carousel slide col-8 mb-5" data-bs-ride="carousel">
@@ -244,22 +258,24 @@
   </div>
   <div class="col-md-2 d-none d-md-block"></div>
 </div>
+<!--Fin Galerie Photo-->
 
-<div class="row">
+<!--Début Contact-->
+<div class="row section" id="contact">
   <div class="col-md-1 d-none d-md-block"></div>
   <div class="col-5">
     <h2 class="fw-bold display-3 text-center">Information</h2>
-    <h4 class="py-5">acf2l@gmail.com</h4>
-    <h4 class="py-5">+33 01 60 56 60 60</h4>
-    <h4 class="py-5">62, Avenue de la République, 70200 Lure</h4>
-    <div class="contact-social-link">
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
+    <h4 class="pt-5 pb-4">acf2l@gmail.com</h4>
+    <h4 class="py-4">+33 01 60 56 60 60</h4>
+    <h4 class="pt-4 pb-5">62, Avenue de la République, 70200 Lure</h4>
+    <div class="contact-social-link col-6">
+      <a href="#"><img src="../images/facebook_logo.png" alt="facebook logo"></a>
+      <a href="#"><img src="../images/X_logo.svg" alt="x logo"></a>
+      <a href="#"><img src="../images/linkedin_logo.svg" alt="linkedin logo"></a>
+      <a href="#"><img src="../images/instagram_logo.svg" alt="instagram logo"></a>
     </div>
   </div>
-  <div class="col-5">
+  <div class="col-5 mb-5">
     <form class="blue-background">
       <h2 class="fw-bold display-3 text-center mb-3">Contact</h2>
       <div class="row g-3">
@@ -286,6 +302,17 @@
   </div>
   <div class="col-md-1 d-none d-md-block"></div>
 </div>
+<!--Fin Contact-->
+
+<!--Début Footer-->
+<footer>
+  <div class="text-center">
+    <img src="../images/Logo_ACF2L_site.png" alt="logo" class="mb-2" width="150px" height="auto">
+    <p class="fw-bold">Aéro-Club de Froidey-lès-Lure</p>
+    <p class="mb-4">Copyright © Adrien Prevost. All rights reserved. Design By Killian Lawson</p>
+  </div>
+</footer>
+<!--Fin Footer-->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
