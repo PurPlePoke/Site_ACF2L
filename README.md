@@ -5,8 +5,9 @@ Dans le cadre d'un TP, nous sommes chargés de la réalisation des missions suiv
   1. Une analyse critique du site actuel
      
   2. Réaliser une maquette d'un nouveau site Web pour répondre aux manquement de l'ancien site (L'utilisation de Figma sera appréciée)
+     - https://www.figma.com/design/GJK7UYjtb85UZanLG6yW86/TP_not%C3%A9_Laroussi_10%2F24?node-id=0-1&t=4G91Fgw9ZGcFvvm5-1
      
-  3. Mettre en œuvre le nouveau site, en respectant les recommandations suivantes :
+  4. Mettre en œuvre le nouveau site, en respectant les recommandations suivantes :
      - Utilisation du framework bootstrap pour la partie design du nouveau site
      - Les fichiers du site doivent être structurés en utilisant une arborescence adaptée.
 
