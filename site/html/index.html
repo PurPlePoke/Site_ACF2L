@@ -362,15 +362,6 @@ document.getElementById('toggleDarkMode').addEventListener('click', function() {
         }
     });
 
-    // Gérer les images .jpg qui doivent devenir .png et vice-versa
-    document.querySelectorAll('img.toggle-jpg-png').forEach(img => {
-        if (isDarkMode) {
-            img.src = img.src.includes('.jpg') ? img.src.replace('_clair.jpg', '_sombre.png') : img.src.replace('_sombre.png', '_clair.jpg');
-        } else {
-            img.src = img.src.includes('.png') ? img.src.replace('_sombre.png', '_clair.jpg') : img.src.replace('_clair.jpg', '_sombre.png');
-        }
-    });
-
     // Gérer les images qui changent uniquement le suffixe clair à sombre et inversement
     document.querySelectorAll('img.toggle-same-type').forEach(img => {
         if (isDarkMode) {
